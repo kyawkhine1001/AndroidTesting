@@ -60,9 +60,7 @@ class MainActivityTest {
     fun testAlreadyRegisterAccount() {
         val name = "Kyaw Khine"
         val phone = "09423696548"
-        val password = "1243533"
-        val alreadyRegisterPhoneMessage =
-            "This number is already registered with an existing account. Please login with your number or register with a different one."
+        val password = "Admin@123"
         Espresso.onView(withId(R.id.edtName))
             .perform(ViewActions.typeText(name), ViewActions.closeSoftKeyboard())
         Espresso.onView(withId(R.id.edtPhone))
@@ -71,7 +69,7 @@ class MainActivityTest {
             .perform(ViewActions.typeText(password), ViewActions.closeSoftKeyboard())
         Espresso.onView(withId(R.id.btnRegister)).perform(ViewActions.click())
         Thread.sleep(3000)
-        onView(withText(alreadyRegisterPhoneMessage)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withText(R.string.alreadyRegisterPhoneMessage)).check(ViewAssertions.matches(isDisplayed()))
     }
 
     @Test
@@ -91,9 +89,9 @@ class MainActivityTest {
             .perform(ViewActions.typeText(password), ViewActions.closeSoftKeyboard())
         Espresso.onView(withId(R.id.btnRegister)).perform(ViewActions.click())
         Thread.sleep(3000)
-//        onView(withText(R.string.registerSuccessMessage)).check(ViewAssertions.matches(isDisplayed()))
-//        onView(withText(expectedGreetingName)).check(ViewAssertions.matches(isDisplayed()))
-//        onView(withText(expectedGreetingMessage)).check(ViewAssertions.matches(isDisplayed()))
+
+//        onView(withText(R.string.registerSuccessMessage)).check(ViewAssertions.matches(isDisplayed()))//this was used for showing only success alert message
+
         onView(withId(R.id.tvGreetingName)).check(ViewAssertions.matches(withText(expectedGreetingName)))
         onView(withId(R.id.tvGreetingMessage)).check(ViewAssertions.matches(withText(expectedGreetingMessage)))
     }
