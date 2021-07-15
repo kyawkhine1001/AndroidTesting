@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidUIUnitTesting</string>
+    <string name="register_your_account">Register Your Account</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_phone">Enter your phone</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="register">Register</string>
+    <string name="fullNameErrorMessage">FullName is required!</string>
+    <string name="phoneErrorMessage">PhoneNumber is required!</string>
+    <string name="passwordErrorMessage">Password is required!</string>
+    <string name="registerSuccessMessage">Successfully Created Your Account!</string>
+</resources>
